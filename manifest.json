@@ -1,10 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions of the world!",
-  "description": "Base Level Extension",
+  "name": "Reading Time Badge",
   "version": "1.0",
-  "action": {
-    "default_popup": "hello.html",
-    "default_icon": "assets/icons/default_icon.png"
+  "description": "Adds a reading time badge to articles",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://developer.chrome.com/docs/extensions/*"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
   }
 }
